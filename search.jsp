@@ -1,4 +1,3 @@
-<!---->>
 <%@ include file="includes/header.jsp" %>
 <%@ page import= "java.util.*" %>
 <%@ page import= "Model.*" %>
