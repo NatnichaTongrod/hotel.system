@@ -19,11 +19,29 @@
 		<form method="post" action="model/customer.jsp">
           <div class="half_width">
             <label for="email">Name<span>*</span></label>
-            <input type="text" name="customer_name" id="customer_name" value="<% out.print(Values.get("customer_name")); %>" size="22" style="width:300px;" required>
+            <input type="text" name="customer_name" id="customer_name" onkeypress="return valid_chars(event);" value="<% out.print(Values.get("customer_name")); %>" size="22" style="width:300px;" required>
+            <script>
+              function valid_numbers(e)
+              {
+                      var key=e.which || e.KeyCode;
+                      if  ( key >=48 && key <= 57)
+                       // to check whether pressed key is number or not 
+                              return true; 
+                       else return false;
+              }
+              function valid_chars(e)
+                {
+                        var key=e.which || e.KeyCode;
+                        if  ( key >=65 && key <= 90 || key >= 97 && key <= 122)
+                         // to check whether pressed key is number or not 
+                                return true; 
+                         else return false;
+                }
+              </script>
           </div>
           <div class="half_width">
             <label for="email">Mobile<span>*</span></label>
-            <input type="text" name="customer_mobile" id="customer_mobile" value="<% out.print(Values.get("customer_mobile")); %>" size="22" style="width:300px;" required>
+            <input type="text" name="customer_mobile" id="customer_mobile" onkeypress="return valid_numbers(event);" value="<% out.print(Values.get("customer_mobile")); %>" size="22" style="width:300px;" required>
           </div>
           <div id="password_row">
 			  <div class="half_width">
@@ -62,7 +80,17 @@
 
           <div class="half_width">
             <label for="email">Pincode<span>*</span></label>
-            <input type="text" name="customer_pincode" id="customer_pincode" value="<% out.print(Values.get("customer_pincode")); %>" size="22" style="width:300px;" required>
+            <input type="text" name="customer_pincode" id="customer_pincode" onkeypress="return valid_numbers(event);" maxlength="5" value="<% out.print(Values.get("customer_pincode")); %>" size="22" style="width:300px;" required >
+            <script>
+              function valid_numbers(e)
+              {
+                      var key=e.which || e.KeyCode;
+                      if  ( key >=48 && key <= 57)
+                       // to check whether pressed key is number or not 
+                              return true; 
+                       else return false;
+              }
+              </script>
           </div>
           <div class="block clear"></div>
           <div>
@@ -85,7 +113,9 @@
 </div>
 <% if(session.getAttribute("login_level") != null && session.getAttribute("login_level").equals("1")) { %>		
 	<script>
-		 jQuery('#password_row').hide();
-	</script>
+     jQuery('#password_row').hide();
+     
+  </script>
+  
 <% } %>
 <%@ include file="includes/footer.jsp" %>

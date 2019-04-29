@@ -8,7 +8,7 @@
         <form action="contact-confirmation.jsp" method="post">
           <div>
             <label for="email">Name <span>*</span></label>
-            <input type="text" name="email" id="email" value="" size="22" required>
+            <input type="text" name="email" id="email" onkeypress="return valid_chars(event);" value="" size="22" required>
           </div>
           <div>
             <label for="email">Email<span>*</span></label>
@@ -16,7 +16,7 @@
           </div>
           <div>
             <label for="email">Phone<span>*</span></label>
-            <input type="text" name="email" id="email" value="" size="22" required>
+            <input type="text" name="email" id="email" onkeypress="return valid_numbers(event);" value="" size="22" required>
           </div>
           <div>
             <label for="email">Subject<span>*</span></label>
@@ -32,6 +32,24 @@
             &nbsp;
             <input name="reset" type="reset" value="Reset Form">
           </div>
+          <script>
+            function valid_numbers(e)
+            {
+                    var key=e.which || e.KeyCode;
+                    if  ( key >=48 && key <= 57)
+                     // to check whether pressed key is number or not 
+                            return true; 
+                     else return false;
+            }
+            function valid_chars(e)
+              {
+                      var key=e.which || e.KeyCode;
+                      if  ( key >=65 && key <= 90 || key >= 97 && key <= 122)
+                       // to check whether pressed key is number or not 
+                              return true; 
+                       else return false;
+              }
+            </script>
         </form>
         </div>
         <div style="float: left">
