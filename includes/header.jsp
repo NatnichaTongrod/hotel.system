@@ -37,8 +37,10 @@ jQuery('document').ready(function() {
   <header id="header" class="clear"> 
     <div id="logo" class="fl_left">
        <div style="float:left; margin-top:-11px;"><h1 style="font-size:27px;"><a href="index.jsp">Hotel Booking System</a></h1>
-      <p style="color:#ffffff">CE HOTEL</p>
+      <p style="color:#ffffff">THE CE HOTEL</p>
       </div>
+      <!--<figure id="slide-1"><a class="view" href="#"><img src="images/demo/slider/logo.jpg" alt=""></a>
+      </figure>-->
     </div>
   </header>
 </div>

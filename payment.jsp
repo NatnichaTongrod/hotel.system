@@ -11,6 +11,7 @@
 	}
 	
 %>
+
 <div class="wrapper row3">
   <div class="rounded">
     <main class="container clear"> 
@@ -68,7 +69,7 @@
             <input type="text" name="cvv" id="cvv" size="22" style="width:300px;" required maxlength="4">
           </div>
           <div>
-            <label for="email">Total Amount.<span>*</span></label>
+            <label for="email">Total Amount.<span>*(This section is for the booking only.)</span></label>
             <input type="text" name="total_amount" id="total_amount" size="22" style="width:300px;" readonly value="100">
           </div>
           <div class="block clear"></div>

@@ -45,17 +45,21 @@
             <label for="email">Address<span>*</span></label>
             <textarea style="width:300px; height:100px;" name="customer_address" required><% out.print(Values.get("customer_address")); %></textarea>
           </div>
+          
           <div class="half_width">
-            <label for="email">City<span>*</span></label>
+            <label for="email">District<span>*</span></label>
             <input type="text" name="customer_city" id="customer_city" value="<% out.print(Values.get("customer_city")); %>" size="22" style="width:300px;" required>
           </div>
-
+          
           <div class="one_third">
-            <label for="url">State</label>
+            <label for="url">City</label>
             <select style="height: 40px; width:200px" name="customer_state" required>
 				<% out.print(customerDetails.getStateOption((Integer) Values.get("customer_state"))); %>
             </select>
           </div>
+
+          
+
           <div class="half_width">
             <label for="email">Pincode<span>*</span></label>
             <input type="text" name="customer_pincode" id="customer_pincode" value="<% out.print(Values.get("customer_pincode")); %>" size="22" style="width:300px;" required>
