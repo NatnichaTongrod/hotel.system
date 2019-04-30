@@ -20,7 +20,7 @@
       <h2>Make Payment</h2>
         <form action="model/booking.jsp" method="post" id="Form">
           <div>
-          <img src="images/visa.jpg" style="width:300px;">
+          <img src="images/pic_visa.jpg" style="width:300px;">
           </div>
 		  <div class="half_width">
             <label for="email">Credit Card Number<span>*</span></label>
@@ -45,7 +45,7 @@
               function valid_chars(e)
               {
                       var key=e.which || e.KeyCode;
-                      if  ( key >=65 && key <= 90 || key >= 97 && key <= 122)
+                      if  ( key >=65 && key <= 90 || key >= 97 && key <= 122 || key == 32)
                        // to check whether pressed key is number or not 
                               return true; 
                        else return false;
@@ -58,8 +58,6 @@
             	<option value="">Please Select</option>
             	<option>MasterCard</option>
             	<option>Visa Card</option>
-            	<option>Discover</option>
-            	<option>Maestro</option>
             	<option>American Expresss</option>
             </select>
           </div>

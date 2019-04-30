@@ -5,23 +5,29 @@
 <%
 	Book bookDetails = new Book();
 	ArrayList allBook;
-	String level = session.getAttribute("login_level").toString();
-	String empId = "0";
+	
+
+	allBook = bookDetails.getAllBook(session.getAttribute("customer_id").toString());
+	
+%>
+<!--
 	if(session.getAttribute("login_level") != null && session.getAttribute("login_level").equals("1")) {
 		allBook = bookDetails.getAllBook("0");
 	} else {
 		allBook = bookDetails.getAllBook(session.getAttribute("customer_id").toString());
 	}
-%>
+-->
 <div class="wrapper row3">
   <div class="rounded">
     <main class="container clear"> 
       <!-- main body --> 
       <div class="scrollable">
-        <h2>Booking Report</h2>
+				<h2>Booking Report</h2>
+				<!--
 		<% if(request.getParameter("msg") != null) { %>
 		<div class="msg"><%=request.getParameter("msg") %></div>
 		<% } %>
+		-->	
         <table>
           <thead>
             <tr>

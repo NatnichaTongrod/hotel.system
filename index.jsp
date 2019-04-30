@@ -40,7 +40,7 @@
             </li>
           </ul>
           <p class="right"><a href="#">Click here to view all about Hotel Room Management System</a></p>
-          <div class="right"><img src="images/demo/logo.jpg" alt=""></div>
+          <div class="right"><img src="images/demo/logo.png" alt=""></div>
            <!--################################################################################################ -->
         </div>
          <!-- Middle Column --> 
