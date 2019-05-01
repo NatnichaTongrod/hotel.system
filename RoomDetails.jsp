@@ -2,13 +2,13 @@
 <%@ page import= "java.util.*" %>
 <%@ page import= "Model.*" %>
 <!--
-  if(session.getAttribute("login_level") == null || session.getAttribute("login_level") == "") {
-		session.setAttribute("room_id",request.getParameter("room_id"));
-		response.sendRedirect("customer-login.jsp?msg=Login to book the room and making payment !!!");
-	}
+  
 -->
 <%
-	
+  if(session.getAttribute("login_level") == null || session.getAttribute("login_level") == "") {
+    session.setAttribute("room_id",request.getParameter("room_id"));
+    response.sendRedirect("customer-login.jsp?msg=Login to book the room and making payment !!!");
+  }  
 	Room roomDetails = new Room();
 	int room_id = Integer.parseInt(request.getParameter ("room_id"));
 	HashMap Values =  roomDetails.getRoomDetails(room_id);	

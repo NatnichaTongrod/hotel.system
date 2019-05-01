@@ -61,11 +61,11 @@
       maxDate: "+20d"
     });
   });
-  function getDate()
+  /*function getDate()
     {
       alert($("#from_date").val());
       alert($("#to_date").val());
-    }
+    }*/
 </script>
 <div class="wrapper row3">
   <div class="rounded">
@@ -121,7 +121,7 @@
           </div>
           <div class="block clear"></div>
           <div>
-            <input name="submit" onclick="getDate()" type="submit" value="Search Room">
+            <input name="submit" type="submit" value="Search Room">
             &nbsp;
             <input name="reset" type="reset" value="Reset Form">
           </div>
