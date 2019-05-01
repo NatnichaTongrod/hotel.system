@@ -4,12 +4,30 @@
 <script>
   jQuery(function() {
     jQuery( "#from_date" ).datepicker({
-      changeMonth: true,
+      /*changeMonth: true,
       changeYear: true,
       maxDate: "+30d",
       minDate: "-0d",
       yearRange: "-0:+1",
-      dateFormat: 'd MM,yy'
+      dateFormat: 'd MM,yy',*/
+      /*
+      defaultDate: new Date(),
+      minDate: new Date(),
+      onSelect: function(dateStr)
+      {
+        ("#to_date").val(dateStr);
+        ("#to_date").datepicker("option",{minDate: new Date(dateStr)})
+      }*/
+      minDate: 0,
+      maxDate: "+20d",
+      onSelect: function(selectedDate)
+      {
+        $("#to_date").datepicker("option","minDate",selectedDate);
+        setTimeout(function()
+        {
+          $("#to_date").datepicker('show');
+        },16);
+      }
     });
     /*var date = $(from_date).datepicker('getDate');
     if(date != null)
@@ -20,15 +38,34 @@
       date.getFullyYear();
     }*/
     //var date_t = $("#from_date").datepicker('getminDate');
+    /*$("#from_date").datepicker({
+      onSelect: function()
+      {
+        var dateObj = $(this).datepicker('getDate');
+      }
+    });*/
     jQuery( "#to_date" ).datepicker({
-      changeMonth: true,
+      /*changeMonth: true,
       changeYear: true,
       maxDate: "+30d",
-      minDate: "+1",
+      minDate: ($("#from_date") + "1d"),
       yearRange: "-0:+1",
-      dateFormat: 'd MM,yy'
+      dateFormat: 'd MM,yy'*/
+      //defaultDate: new Date(),
+      //minDate: ("from_date" + "1D"),
+      /*onSelect: function(dateStr){
+        roDate = new Date(dateStr);
+        fromDate = ConvertDataToShortDateString(fromDate);
+        toDate = ConvertDateToShortDateString(toDate);
+      }*/
+      maxDate: "+20d"
     });
   });
+  function getDate()
+    {
+      alert($("#from_date").val());
+      alert($("#to_date").val());
+    }
 </script>
 <div class="wrapper row3">
   <div class="rounded">
@@ -84,7 +121,7 @@
           </div>
           <div class="block clear"></div>
           <div>
-            <input name="submit" type="submit" value="Search Room">
+            <input name="submit" onclick="getDate()" type="submit" value="Search Room">
             &nbsp;
             <input name="reset" type="reset" value="Reset Form">
           </div>
