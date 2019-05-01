@@ -20,7 +20,7 @@
       <h2>Make Payment</h2>
         <form action="model/booking.jsp" method="post" id="Form">
           <div>
-          <img src="images/pic_visa.jpg" style="width:300px;">
+          <img src="images/visa_mas.jpg" style="width:300px;">
           </div>
 		  <div class="half_width">
             <label for="email">Credit Card Number<span>*</span></label>
@@ -58,7 +58,6 @@
             	<option value="">Please Select</option>
             	<option>MasterCard</option>
             	<option>Visa Card</option>
-            	<option>American Expresss</option>
             </select>
           </div>
           <div class="half_width">
@@ -88,8 +87,8 @@
             <input type="text" name="cvv" id="cvv" size="22" style="width:300px;" required maxlength="4" onkeypress="return valid_numbers(event);">
           </div>
           <div>
-            <label for="email">Total Amount.<span>*(This section is for the booking only.)</span></label>
-            <input type="text" name="total_amount" id="total_amount" size="22" style="width:300px;" readonly value="100">
+            <label for="email">Total Amount.<span>*(This section is for the booking only.) 1 room 100 baht</span></label>
+            <input type="text" name="total_amount" id="total_amount" size="22" style="width:300px;" readonly value="<%=session.getAttribute("no_rooms")%>00">
           </div>
           <div class="block clear"></div>
           <div>
